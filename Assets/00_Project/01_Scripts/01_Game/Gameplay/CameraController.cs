@@ -45,8 +45,8 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
 #if UNITY_EDITOR
-        rotX += Input.GetAxis("Mouse X") * 50f;
-        rotY -= Input.GetAxis("Mouse Y") * 50f;
+        rotX += Input.GetAxis("Mouse X") * Sensitivity * 500f;
+        rotY -= Input.GetAxis("Mouse Y") * Sensitivity * 500f;
         distance -= Input.GetAxis("Mouse ScrollWheel") * 5f;
 #else
         var touches = Touch.activeTouches;
