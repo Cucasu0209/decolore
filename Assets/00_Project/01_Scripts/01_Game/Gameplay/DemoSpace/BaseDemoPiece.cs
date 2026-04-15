@@ -5,6 +5,7 @@ public class BaseDemoPiece : MonoBehaviour
     [SerializeField] private int pieceID;
     [SerializeField] private Transform root;
     [SerializeField] private Transform demoModel;
+    private float minDistance;
     private Camera camera;
     private Transform camTf;
     private Vector3 currentPos = Vector3.zero;
@@ -14,6 +15,7 @@ public class BaseDemoPiece : MonoBehaviour
         camTf = Camera.main.transform;
         currentPos = demoModel.position;
         CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged += CheckEnable;
+        minDistance = Mathf.Min(CaculateMinDistance() / 2, 0.3f);
         CheckEnable();
     }
     private void OnDestroy()
@@ -38,13 +40,27 @@ public class BaseDemoPiece : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0))
             {
-                if (Vector3.Distance(root.position, demoModel.position) < 1)
+                if (Vector3.Distance(root.position, demoModel.position) < minDistance)
                 {
                     CurrentGamePlayManager.Instance.CompletePiece(pieceID);
                 }
             }
         }
 
+    }
+    private float CaculateMinDistance()
+    {
+        var renderers = demoModel.GetComponentsInChildren<Renderer>();
+        float maxDistance = 0f;
+        foreach (var renderer in renderers)
+        {
+            float distance = Mathf.Max(renderer.bounds.size.x, renderer.bounds.size.y, renderer.bounds.size.z);
+            if (distance > maxDistance)
+            {
+                maxDistance = distance;
+            }
+        }
+        return maxDistance / 2;
     }
 
     public bool TryFindPointD(

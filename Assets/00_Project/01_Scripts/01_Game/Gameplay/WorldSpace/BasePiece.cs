@@ -28,7 +28,7 @@ public class BasePiece : MonoBehaviour
     {
         if (id == pieceID)
         {
-            objectDone.transform.localScale = Vector3.one * 0.8f;
+            objectDone.transform.localScale = Vector3.one * 0.6f;
             objectDone.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
 
             objectDone.gameObject.SetActive(true);

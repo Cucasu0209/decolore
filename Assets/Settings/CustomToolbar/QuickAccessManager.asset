@@ -13,55 +13,37 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: Obj_Done
-    scenePath: 
-  - displayName: Obj_Done
-    scenePath: 
-  - displayName: O_1_2
-    scenePath: 
-  - displayName: O_1_2
-    scenePath: 
-  - displayName: Obj_Done
-    scenePath: 
-  - displayName: O_1_3
-    scenePath: 
-  - displayName: O_1_3
-    scenePath: 
-  - displayName: O_1_4
-    scenePath: 
-  - displayName: O_1_4
-    scenePath: 
-  - displayName: Obj_Done
-    scenePath: 
-  - displayName: Obj_Done
-    scenePath: 
-  - displayName: Obj_NotYet
-    scenePath: 
-  - displayName: O_1_5
-    scenePath: 
-  - displayName: O_1_5
-    scenePath: 
-  - displayName: O_1_1
-    scenePath: 
-  - displayName: O_1_0
-    scenePath: 
-  - displayName: O_1_1
+  - displayName: Recyclable Scroll Controller
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Object
+  - displayName: Hori
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Obj_Done
+  - displayName: Panel
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Obj_Demo
+  - displayName: BG
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Model
+  - displayName: ItemLists
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Obj_NotYet
+  - displayName: Booster1
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: O_1_2
+  - displayName: BoosterZone
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Obj_Done
+  - displayName: Slider
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Obj_Demo
+  - displayName: ZoomZone
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Demo
+  - displayName: BottomZone
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: CoinZOne
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Hearts
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: TopZone
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Canvas
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: WorldSpace
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Plane
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Cake
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
