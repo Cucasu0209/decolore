@@ -1,8 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TestMoveItem : MonoBehaviour
 {
-    [SerializeField] private Transform Camera;
+    [SerializeField] private Camera Camera;
     [SerializeField] private Transform CamT;
     [SerializeField] private Transform TargetPoint;
     [SerializeField] private float MoveSpeed = 0.1f;
@@ -13,31 +13,37 @@ public class TestMoveItem : MonoBehaviour
         bool moved = false;
         if (Input.GetKey(KeyCode.W))
         {
-            currentPos += Camera.up * MoveSpeed * Time.deltaTime;
+            currentPos += Camera.transform.up * MoveSpeed * Time.deltaTime;
             moved = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
             moved = true;
 
-            currentPos += Camera.right * MoveSpeed * Time.deltaTime;
+            currentPos += Camera.transform.right * MoveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
             moved = true;
 
-            currentPos += -Camera.up * MoveSpeed * Time.deltaTime;
+            currentPos += -Camera.transform.up * MoveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
             moved = true;
 
-            currentPos += -Camera.right * MoveSpeed * Time.deltaTime;
+            currentPos += -Camera.transform.right * MoveSpeed * Time.deltaTime;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            moved = true;
+            currentPos = GetMousePointOnPlanePlusUp();
         }
 
         if (moved)
         {
-            if (TryFindPointD(TargetPoint.position, currentPos, Camera.position, Camera.forward, out Vector3 D))
+            if (TryFindPointD(TargetPoint.position, currentPos, Camera.transform.position, Camera.transform.forward, out Vector3 D))
             {
                 currentPos = D;
                 transform.position = currentPos;
@@ -65,5 +71,19 @@ public class TestMoveItem : MonoBehaviour
         D = B + t * BC;
 
         return true;
+    }
+
+    public Vector3 GetMousePointOnPlanePlusUp(float offset = 150f)
+    {
+        Ray ray = Camera.ScreenPointToRay(Input.mousePosition + Vector3.up * offset);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+        {
+            Vector3 hitPoint = hit.point;
+
+            return hitPoint;
+        }
+
+        return Vector3.zero;
     }
 }
