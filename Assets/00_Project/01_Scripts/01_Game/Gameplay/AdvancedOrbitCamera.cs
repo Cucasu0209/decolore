@@ -5,25 +5,25 @@ public class AdvancedOrbitCamera : MonoBehaviour
     public Transform target;
 
     [Header("Distance")]
-    public float distance = 5f;
-    public float minDistance = 2f;
-    public float maxDistance = 10f;
+    [SerializeField] private float distance = 5f;
+    [SerializeField] private float minDistance = 2f;
+    [SerializeField] private float maxDistance = 10f;
 
     [Header("Rotation")]
-    public float rotationSpeed = 0.2f;
-    public float minY = -20f;
-    public float maxY = 80f;
+    [SerializeField] private float rotationSpeed = 0.2f;
+    [SerializeField] private float minY = -20f;
+    [SerializeField] private float maxY = 80f;
 
     [Header("Zoom")]
-    public float zoomSpeed = 0.1f;
+    [SerializeField] private float zoomSpeed = 0.1f;
 
     [Header("Damping")]
-    public float rotationDamping = 10f;
-    public float zoomDamping = 10f;
+    [SerializeField] private float rotationDamping = 10f;
+    [SerializeField] private float zoomDamping = 10f;
 
     [Header("Auto Rotate")]
-    public float autoRotateSpeed = 10f;
-    public float idleTimeBeforeAuto = 2f;
+    [SerializeField] private float autoRotateSpeed = 10f;
+    [SerializeField] private float idleTimeBeforeAuto = 2f;
 
     private float rotX;
     private float rotY;

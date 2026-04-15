@@ -2570,7 +2570,7 @@ Transform:
   m_GameObject: {fileID: 696998657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 30, z: 30}
+  m_LocalPosition: {x: 100, y: 100, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4357,7 +4357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273006719}
   m_Layer: 0
-  m_Name: MainGameplay
+  m_Name: WorldSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5635,6 +5635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1697920284}
   - component: {fileID: 1697920283}
+  - component: {fileID: 1697920285}
   m_Layer: 0
   m_Name: 'Manager '
   m_TagString: Untagged
@@ -5669,6 +5670,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697920285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697920282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51fa0a1cc5094347bd14822d65d546a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1719762236
 GameObject:
   m_ObjectHideFlags: 0

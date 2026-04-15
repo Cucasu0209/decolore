@@ -13,11 +13,35 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: EventSystem
+  - displayName: OdinModuleConfig
+    scenePath: 
+  - displayName: InspectorConfig
+    scenePath: 
+  - displayName: Fx_Windy
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: MainGameplay
+  - displayName: MainCamera
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Item3
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: BigWind
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Blink
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Fx_Windy
+    scenePath: 
+  - displayName: MainCamera
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Camera
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Item3
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Pos2
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Pos1
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
   - displayName: SubCamZone
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: EventSystem
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
   - displayName: Plane
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
@@ -25,11 +49,3 @@ MonoBehaviour:
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
   - displayName: ObjectZone
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: CameraAnchor
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Canvas
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: 'Manager '
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Readme
-    scenePath: 
