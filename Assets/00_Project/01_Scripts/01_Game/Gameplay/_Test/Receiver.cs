@@ -19,7 +19,7 @@ public class Receiver : MonoBehaviour
     {
         if (ID == this.ID)
         {
-            transform.localPosition = Campos.normalized * 1.7f;
+            transform.localPosition = Campos.normalized * 1;
             transform.LookAt(transform.parent.position);
         }
     }

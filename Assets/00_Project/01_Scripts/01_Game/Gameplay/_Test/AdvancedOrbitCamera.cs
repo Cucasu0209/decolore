@@ -2,7 +2,7 @@
 
 public class AdvancedOrbitCamera : MonoBehaviour
 {
-    [SerializeField] private Vector3 center;
+    public Vector3 center;
 
     [Header("Distance")]
     [SerializeField] private float distance = 5f;
@@ -54,7 +54,8 @@ public class AdvancedOrbitCamera : MonoBehaviour
 
     void Update()
     {
-
+        if (!CurrentGamePlayManager.Instance.CanMoveCam())
+            return;
         HandleInput();
         HandleAutoRotate();
         ApplyDamping();
