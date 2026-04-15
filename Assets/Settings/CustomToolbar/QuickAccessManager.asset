@@ -13,39 +13,49 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: OdinModuleConfig
+  - displayName: Demo
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Done
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: O_1_1
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Object
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: O_1_2
     scenePath: 
-  - displayName: InspectorConfig
+  - displayName: O_1_5
     scenePath: 
-  - displayName: Fx_Windy
+  - displayName: O_1_4
+    scenePath: 
+  - displayName: O_1_3
+    scenePath: 
+  - displayName: O_1_2
+    scenePath: 
+  - displayName: O_1_1
+    scenePath: 
+  - displayName: Demo
+    scenePath: 
+  - displayName: ObjLevel1
+    scenePath: 
+  - displayName: Object
+    scenePath: 
+  - displayName: Level1
+    scenePath: 
+  - displayName: MainCamera
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: CameraAnchor
+    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: WorldSpace
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
   - displayName: MainCamera
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Item3
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: BigWind
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Blink
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Fx_Windy
-    scenePath: 
-  - displayName: MainCamera
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Camera
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Item3
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Pos2
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Pos1
+  - displayName: WorldSpace
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
   - displayName: SubCamZone
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: EventSystem
+  - displayName: Cake
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
   - displayName: Plane
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: ObjectZone (1)
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: ObjectZone
+  - displayName: CameraAnchor
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity

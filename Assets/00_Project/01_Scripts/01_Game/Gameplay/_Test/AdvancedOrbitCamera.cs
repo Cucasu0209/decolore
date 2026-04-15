@@ -2,7 +2,7 @@
 
 public class AdvancedOrbitCamera : MonoBehaviour
 {
-    public Transform target;
+    [SerializeField] private Vector3 center;
 
     [Header("Distance")]
     [SerializeField] private float distance = 5f;
@@ -41,13 +41,12 @@ public class AdvancedOrbitCamera : MonoBehaviour
 
     void Start()
     {
-        if (target == null) return;
 
         Vector3 angles = transform.eulerAngles;
         rotX = targetRotX = angles.y;
         rotY = targetRotY = angles.x;
 
-        distance = targetDistance = Vector3.Distance(transform.position, target.position);
+        distance = targetDistance = Vector3.Distance(transform.position, center);
 
     }
 
@@ -55,7 +54,6 @@ public class AdvancedOrbitCamera : MonoBehaviour
 
     void Update()
     {
-        if (target == null) return;
 
         HandleInput();
         HandleAutoRotate();
@@ -146,7 +144,7 @@ public class AdvancedOrbitCamera : MonoBehaviour
 
         Vector3 offset = rotation * new Vector3(0, 0, -distance);
 
-        transform.position = target.transform.position + offset;
-        transform.LookAt(target.transform.position);
+        transform.position = center + offset;
+        transform.LookAt(center);
     }
 }
