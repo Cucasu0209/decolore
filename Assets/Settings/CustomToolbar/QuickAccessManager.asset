@@ -13,37 +13,27 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: Recyclable Scroll Controller
+  - displayName: Directional Light
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Hori
+  - displayName: Background
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Panel
+  - displayName: MainCamera
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: BG
+  - displayName: Background
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: ItemLists
+  - displayName: Directional Light
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Booster1
+  - displayName: CameraOverlay
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: BoosterZone
+  - displayName: 'Manager '
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Slider
+  - displayName: MainCamera
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: ZoomZone
+  - displayName: 'Manager '
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: BottomZone
+  - displayName: Gameplay
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: CoinZOne
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Hearts
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: TopZone
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Canvas
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: WorldSpace
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Plane
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Cake
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: Recyclable Scroll View
+    scenePath: Assets/Recyclable Scroll Rect/Demo/Scenes/Horizontal.unity
+  - displayName: Viewport
+    scenePath: Assets/Recyclable Scroll Rect/Demo/Scenes/Horizontal.unity
