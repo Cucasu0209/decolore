@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
+  - displayName: Readme
+    scenePath: 
   - displayName: Directional Light
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
   - displayName: Background
@@ -33,7 +35,3 @@ MonoBehaviour:
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
   - displayName: Gameplay
     scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Recyclable Scroll View
-    scenePath: Assets/Recyclable Scroll Rect/Demo/Scenes/Horizontal.unity
-  - displayName: Viewport
-    scenePath: Assets/Recyclable Scroll Rect/Demo/Scenes/Horizontal.unity
