@@ -13,29 +13,25 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: Mesh
+  - displayName: HapticToggle
     scenePath: 
-  - displayName: 04_FBX
+  - displayName: CloseButton
     scenePath: 
-  - displayName: RollCake
+  - displayName: Button
     scenePath: 
-  - displayName: Firecracker
+  - displayName: Privacy
     scenePath: 
-  - displayName: ChestSilver_top
+  - displayName: SettingPopup
     scenePath: 
-  - displayName: Gift
+  - displayName: MusicToggle
     scenePath: 
-  - displayName: PackingPeanut
+  - displayName: Dark
     scenePath: 
-  - displayName: Reward_Box_01
+  - displayName: Content
     scenePath: 
-  - displayName: Reward_Box_01
+  - displayName: SettingPopup
     scenePath: 
-  - displayName: Reward_Box_02
+  - displayName: SettingButton
     scenePath: 
-  - displayName: Reward_Box_03
-    scenePath: 
-  - displayName: Reward_Box_04
-    scenePath: 
-  - displayName: Reward_Box_05
+  - displayName: UI
     scenePath: 
