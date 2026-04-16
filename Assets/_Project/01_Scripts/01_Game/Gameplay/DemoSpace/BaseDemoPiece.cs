@@ -38,11 +38,18 @@ public class BaseDemoPiece : MonoBehaviour
                 currentPos = D;
                 demoModel.position = currentPos;
             }
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonUp(0))
             {
                 if (Vector3.Distance(root.position, demoModel.position) < minDistance)
                 {
                     CurrentGamePlayManager.Instance.CompletePiece(pieceID);
+                    Debug.LogError("Complete Piece " + pieceID);
+                }
+                else
+                {
+                    Debug.LogError("Fail Piece " + pieceID);
+
+
                 }
             }
         }

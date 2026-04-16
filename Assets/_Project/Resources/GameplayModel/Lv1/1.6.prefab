@@ -538,6 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f9ef797f7094d9d28f06a31dce98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceID: 5
+  pieceID: 6
   root: {fileID: 586448064517508412}
   demoModel: {fileID: 1348863269403290403}

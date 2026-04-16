@@ -34,7 +34,7 @@ public class PieceCell : MonoBehaviour, ICell, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.LogError(_contactInfo.id);
+        DragDemoController.Instance.SetCacheDrag(_contactInfo.id);
     }
 
 }

@@ -8,6 +8,7 @@ public class CurrentGamePlayManager : MonoBehaviour
 {
     public int PieaceIDChoosing = -1;
     public List<int> PiecesRemain { get; private set; } = new List<int>();
+    public int TotalPiece { get; private set; }
 
     public Action OnPieaceIDChoosingChanged;
     public Action<int> OnPieceCompleted;
@@ -21,7 +22,7 @@ public class CurrentGamePlayManager : MonoBehaviour
     {
         Instance = this;
     }
-     IEnumerator Start()
+    IEnumerator Start()
     {
         yield return null;
         SpawnModel();
@@ -31,8 +32,8 @@ public class CurrentGamePlayManager : MonoBehaviour
         BaseItem obj = Resources.Load<BaseItem>(GameConfig.GetLevelModelTotal(GameManager.Instance.CurrentLevel));
         LeanPool.Spawn(obj, transform).transform.localPosition = Vector3.zero;
 
-        int pieceCount = obj.GetPieceCount();
-        for (int i = 1; i <= pieceCount; i++)
+        TotalPiece = obj.GetPieceCount();
+        for (int i = 1; i <= TotalPiece; i++)
         {
             PiecesRemain.Add(i);
         }
@@ -49,7 +50,7 @@ public class CurrentGamePlayManager : MonoBehaviour
 
     public void ChoosePieceID(int pID)
     {
-        if (IsPieceCompleted(pID)) return;
+        if (IsPieceCompleted(pID) && pID > 0) return;
         PieaceIDChoosing = pID;
         OnPieaceIDChoosingChanged?.Invoke();
     }
