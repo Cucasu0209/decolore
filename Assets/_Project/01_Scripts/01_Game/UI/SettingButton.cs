@@ -12,18 +12,18 @@ public class SettingButton : MonoBehaviour
     private void Start()
     {
         btn.onClick.AddListener(OnSettingButtonClick);
-        btn.transform.localScale = Vector3.zero;
+        //btn.transform.localScale = Vector3.zero;
 
 
-        UIManager.Instance.OnLoadingAOAComplete += ShowButton;
-        UIManager.Instance.OnShowFakeLoading += HideButton;
-        UIManager.Instance.OnCloseFakeLoading += ShowButton;
+        //UIManager.Instance.OnLoadingAOAComplete += ShowButton;
+        //UIManager.Instance.OnShowFakeLoading += HideButton;
+        //UIManager.Instance.OnCloseFakeLoading += ShowButton;
     }
     private void OnDestroy()
     {
-        UIManager.Instance.OnLoadingAOAComplete -= ShowButton;
-        UIManager.Instance.OnShowFakeLoading -= HideButton;
-        UIManager.Instance.OnCloseFakeLoading -= ShowButton;
+        //UIManager.Instance.OnLoadingAOAComplete -= ShowButton;
+        //UIManager.Instance.OnShowFakeLoading -= HideButton;
+        //UIManager.Instance.OnCloseFakeLoading -= ShowButton;
 
     }
     private void ShowButton()
@@ -34,10 +34,7 @@ public class SettingButton : MonoBehaviour
     {
         btn.transform.DOScale(1, 0.3f).SetDelay(isShowFull ? 1 : 0.2f);
     }
-    private void HideButton()
-    {
-        btn.transform.DOScale(0, 0.2f);
-    }
+
     private void HideButton(bool isShowfull, Action OnComplete)
     {
         btn.transform.DOScale(0, 0.2f);

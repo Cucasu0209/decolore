@@ -251,7 +251,7 @@ MonoBehaviour:
   SoundFxButton: {fileID: 7806879552542071003}
   HapticButton: {fileID: 3506540655551814670}
   ToggleOn: {fileID: 21300000, guid: 936668a45efc41848a9d9bbdc48d3d5c, type: 3}
-  ToggleOff: {fileID: 21300000, guid: 936668a45efc41848a9d9bbdc48d3d5c, type: 3}
+  ToggleOff: {fileID: 21300000, guid: d87b2339c8fcaad4ab7b0b6664c0c9b4, type: 3}
 --- !u!1 &2326487232569915647
 GameObject:
   m_ObjectHideFlags: 0

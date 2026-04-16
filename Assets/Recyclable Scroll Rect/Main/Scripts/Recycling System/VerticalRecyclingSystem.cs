@@ -72,7 +72,7 @@ namespace PolyAndCode.UI
             //Set content height according to no of rows
             int noOfRows = (int)Mathf.Ceil((float)_cellPool.Count / (float)_coloumns);
             float contentYSize = noOfRows * _cellHeight;
-            Content.sizeDelta = new Vector2(Content.sizeDelta.x, contentYSize);
+           Content.sizeDelta = new Vector2(Content.sizeDelta.x, contentYSize);
             SetTopAnchor(Content);
 
             if (onInitialized != null) onInitialized();
@@ -129,7 +129,7 @@ namespace PolyAndCode.UI
 
             //set new cell size according to its aspect ratio
             _cellWidth = Content.rect.width / _coloumns;
-            _cellHeight = PrototypeCell.sizeDelta.y / PrototypeCell.sizeDelta.x * _cellWidth;
+            _cellHeight = PrototypeCell.sizeDelta.y /*/ PrototypeCell.sizeDelta.x * _cellWidth*/;
 
             //Get the required pool coverage and mininum size for the Cell pool
             float requriedCoverage = MinPoolCoverage * Viewport.rect.height;
