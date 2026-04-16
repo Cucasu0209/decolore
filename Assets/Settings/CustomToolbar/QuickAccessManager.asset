@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: Image
+  - displayName: ListLevel
     scenePath: Assets/_Project/00_Scenes/Home.unity
   - displayName: CoinZone
     scenePath: Assets/_Project/00_Scenes/Home.unity
