@@ -13,25 +13,43 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: HapticToggle
-    scenePath: 
-  - displayName: CloseButton
-    scenePath: 
-  - displayName: Button
-    scenePath: 
-  - displayName: Privacy
-    scenePath: 
-  - displayName: SettingPopup
-    scenePath: 
-  - displayName: MusicToggle
-    scenePath: 
-  - displayName: Dark
-    scenePath: 
-  - displayName: Content
-    scenePath: 
-  - displayName: SettingPopup
-    scenePath: 
+  - displayName: Image
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: CoinZone
+    scenePath: Assets/_Project/00_Scenes/Home.unity
   - displayName: SettingButton
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: HomeContent
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: Popups
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: SafeArea
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: Canvas
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: Manager
     scenePath: 
-  - displayName: UI
+  - displayName: Manager
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: UIManager
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: Manager
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: GameManager
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: Manager
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: SoundManager
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: GameObject
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: SoundManager
     scenePath: 
+  - displayName: BGAudioSource
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: SFXAudioSource
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: SoundManager
+    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: GameObject
+    scenePath: Assets/_Project/00_Scenes/Home.unity

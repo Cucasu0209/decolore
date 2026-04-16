@@ -142,23 +142,11 @@ public class SoundManager : MonoBehaviour
 
     #region MUTUAL SOUND
     [SerializeField] private AudioClip ButtonSound;
-    [SerializeField] private AudioClip CompleteStepSound;
-    [SerializeField] private AudioClip CompleteSubStepSound;
 
     public void PlayButtonSound()
     {
         Vibrate(1);
         PlayEffect(ButtonSound);
-    }
-    public void PlayCompleteSound()
-    {
-        Vibrate(1);
-        PlayEffect(CompleteStepSound);
-    }
-    public void PlaySubstepCompleteSound()
-    {
-        Vibrate(1);
-        PlayEffect(CompleteSubStepSound);
     }
     #endregion MUTUAL SOUND
 
