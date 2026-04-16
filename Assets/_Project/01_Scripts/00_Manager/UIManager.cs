@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,17 +13,40 @@ public class UIManager : MonoBehaviour
         Input.multiTouchEnabled = false;
     }
 
+    #region Load Scene
+    public void LoadSceneGameplay()
+    {
+        StartCoroutine(LoadSceneAsync(GameConfig.GAMEPLAY_SCENE_NAME));
+    }
+    public void LoadSceneHome()
+    {
+        StartCoroutine(LoadSceneAsync(GameConfig.HOME_SCENE_NAME));
+    }
+    IEnumerator LoadSceneAsync(string sceneName)
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!op.isDone)
+        {
+            Debug.Log(op.progress); // 0 → 0.9
+            yield return null;
+        }
+    }
+    #endregion
+
     #region Events
 
     public Action OnOpenSettingPopup;
-    public Action OnOpenGaragePopup;
-    public Action OnCloseGaragePopup;
     public Action OnOpenRatingPopup;
     public Action<bool, Action> OnShowFakeLoading;
     public Action<bool> OnCloseFakeLoading;
-
     public Action OnLoadingAOAComplete;
     public Action<int, Action> OnShowRate;
+
+    public Action OnShowPreview;
+    public Action OnShowListLevel;
+
+
 
     #endregion
 
@@ -124,4 +148,6 @@ public class UIManager : MonoBehaviour
         //AnalyticsManager.Instance.LogEvent(message);
     }
     #endregion
+
+
 }

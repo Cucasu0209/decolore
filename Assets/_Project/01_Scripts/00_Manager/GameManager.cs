@@ -10,11 +10,18 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Application.targetFrameRate = 60;
     }
 
+    #region Level Controller
+    public int CurrentLevel { get; private set; } = 1;
+    public Action OnCurrentLevelChange;
+    public void ChooseLevel(int level)
+    {
+        CurrentLevel = level;
+        OnCurrentLevelChange?.Invoke();
+    }
 
+    #endregion
 
     #region TimeScale Controller
     private int PauseProgressCount = 0;

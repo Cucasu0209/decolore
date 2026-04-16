@@ -13,37 +13,39 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: LevelCellBox
+  - displayName: ZoomZone
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Slider
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: ItemLists
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Panel
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: SafeArea
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Canvas
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Cam0
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: SubCamZone
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: ZoomSlider
     scenePath: 
-  - displayName: Icon
+  - displayName: UI
     scenePath: 
-  - displayName: Lock
+  - displayName: ListSpace
     scenePath: 
-  - displayName: Level
-    scenePath: 
-  - displayName: Icon
-    scenePath: 
-  - displayName: Level
-    scenePath: 
-  - displayName: Button
-    scenePath: 
-  - displayName: LevelCellBox
-    scenePath: 
-  - displayName: LevelCellBox
-    scenePath: 
-  - displayName: SettingPopup
-    scenePath: Assets/_Project/00_Scenes/Home.unity
-  - displayName: GameObject
-    scenePath: 
-  - displayName: Manager
-    scenePath: 
-  - displayName: PlayerData
-    scenePath: 
-  - displayName: 00_Manager
-    scenePath: 
-  - displayName: SettingPopup
-    scenePath: 
-  - displayName: SettingPopup
-    scenePath: Assets/_Project/00_Scenes/Home.unity
-  - displayName: Content
-    scenePath: Assets/_Project/00_Scenes/Home.unity
+  - displayName: MainCamera
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: WorldSpace
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Canvas
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: WorldSpace
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: MainCamera
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: WorldSpace
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: ItemLists
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity

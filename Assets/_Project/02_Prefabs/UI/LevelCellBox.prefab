@@ -168,6 +168,7 @@ MonoBehaviour:
   levelIcon: {fileID: 9162380366110870791}
   levelIndex: {fileID: 2224967912633722962}
   LockPanel: {fileID: 8042422148794893822}
+  LockIcon: {fileID: 2694082508732147324}
 --- !u!1 &5757223155210560135
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +320,7 @@ GameObject:
   - component: {fileID: 7054822809287908061}
   - component: {fileID: 2694082508732147324}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: LockIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,7 +395,7 @@ GameObject:
   - component: {fileID: 8192623431337912551}
   - component: {fileID: 5493219952149318755}
   m_Layer: 5
-  m_Name: Lock
+  m_Name: LockFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -85,8 +85,8 @@ namespace PolyAndCode.UI
         {
             Viewport.GetWorldCorners(_corners);
             float threshHold = RecyclingThreshold * (_corners[2].x - _corners[0].x);
-            _recyclableViewBounds.min = new Vector3(_corners[0].x - threshHold, _corners[0].y);
-            _recyclableViewBounds.max = new Vector3(_corners[2].x + threshHold, _corners[2].y);
+            _recyclableViewBounds.min = new Vector3(_corners[0].x/* - threshHold*/, _corners[0].y);
+            _recyclableViewBounds.max = new Vector3(_corners[2].x/* + threshHold*/, _corners[2].y);
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace PolyAndCode.UI
 
             //set new cell size according to its aspect ratio
             _cellHeight = Content.rect.height / _rows;
-            _cellWidth = PrototypeCell.sizeDelta.x / PrototypeCell.sizeDelta.y * _cellHeight;
+            _cellWidth = PrototypeCell.sizeDelta.x/* / PrototypeCell.sizeDelta.y * _cellHeight*/;
 
             //Reset
             _leftMostCellRow = _RightMostCellRow = 0;
@@ -125,7 +125,7 @@ namespace PolyAndCode.UI
             float posY = 0;
 
             //Get the required pool coverage and mininum size for the Cell pool
-            float requriedCoverage = MinPoolCoverage * Viewport.rect.width;
+            float requriedCoverage = _cellWidth + Viewport.rect.width - 1;
             int minPoolSize = Math.Min(MinPoolSize, DataSource.GetItemCount());
 
             //create cells untill the Pool area is covered and pool size is the minimum required
