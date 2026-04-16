@@ -6,12 +6,12 @@ public class BaseDemoPiece : MonoBehaviour
     [SerializeField] private Transform root;
     [SerializeField] private Transform demoModel;
     private float minDistance;
-    private Camera camera;
+    private Camera currenCamera;
     private Transform camTf;
     private Vector3 currentPos = Vector3.zero;
     private void Start()
     {
-        camera = Camera.main;
+        currenCamera = Camera.main;
         camTf = Camera.main.transform;
         currentPos = demoModel.position;
         CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged += CheckEnable;
@@ -88,7 +88,7 @@ public class BaseDemoPiece : MonoBehaviour
 
     public Vector3 GetMousePointOnPlanePlusUp(float offset = 150f)
     {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition + Vector3.up * offset);
+        Ray ray = currenCamera.ScreenPointToRay(Input.mousePosition + Vector3.up * offset);
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
         {

@@ -13,25 +13,29 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: Readme
+  - displayName: Mesh
     scenePath: 
-  - displayName: Directional Light
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Background
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: MainCamera
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Background
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Directional Light
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: CameraOverlay
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: 'Manager '
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: MainCamera
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: 'Manager '
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
-  - displayName: Gameplay
-    scenePath: Assets/00_Project/00_Scenes/Gameplay.unity
+  - displayName: 04_FBX
+    scenePath: 
+  - displayName: RollCake
+    scenePath: 
+  - displayName: Firecracker
+    scenePath: 
+  - displayName: ChestSilver_top
+    scenePath: 
+  - displayName: Gift
+    scenePath: 
+  - displayName: PackingPeanut
+    scenePath: 
+  - displayName: Reward_Box_01
+    scenePath: 
+  - displayName: Reward_Box_01
+    scenePath: 
+  - displayName: Reward_Box_02
+    scenePath: 
+  - displayName: Reward_Box_03
+    scenePath: 
+  - displayName: Reward_Box_04
+    scenePath: 
+  - displayName: Reward_Box_05
+    scenePath: 
