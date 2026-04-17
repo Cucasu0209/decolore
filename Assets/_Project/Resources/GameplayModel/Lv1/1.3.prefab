@@ -50,9 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceID: 3
   objectDone: {fileID: 9163693716015583152}
-  objectDemo: {fileID: 3762531832138245539}
+  objectDemo: {fileID: 4369588241392411854}
   objectNotYet: {fileID: 3260527619225241984}
   objectInList: {fileID: 6149849236794665299}
+  demoModel: {fileID: 7939620592793843260}
 --- !u!1 &1847689040134122291
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +385,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4369588241392411854}
-  - component: {fileID: 3762531832138245539}
   m_Layer: 7
   m_Name: Obj_Demo
   m_TagString: Untagged
@@ -408,21 +408,6 @@ Transform:
   - {fileID: 7939620592793843260}
   m_Father: {fileID: 8990283385836081802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3762531832138245539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8966340303173812206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8438f9ef797f7094d9d28f06a31dce98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pieceID: 3
-  root: {fileID: 4369588241392411854}
-  demoModel: {fileID: 7939620592793843260}
 --- !u!1 &9163693716015583152
 GameObject:
   m_ObjectHideFlags: 0

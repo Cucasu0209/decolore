@@ -1,7 +1,9 @@
-using Lean.Pool;
+﻿using Lean.Pool;
 using PolyAndCode.UI;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 /// <summary>
 /// Demo controller class for Recyclable Scroll Rect. 
@@ -28,16 +30,40 @@ public class PieceRecyclableScroller : MonoBehaviour, IRecyclableScrollRectDataS
     private void Start()
     {
         CurrentGamePlayManager.Instance.OnSetupModelComplete += InitData;
+        CurrentGamePlayManager.Instance.OnPieceCompleted += OnDataChange;
+        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged += StopScroll;
+
         _recyclableScrollRect.DataSource = this;
     }
 
     private void OnDestroy()
     {
         CurrentGamePlayManager.Instance.OnSetupModelComplete -= InitData;
-
+        CurrentGamePlayManager.Instance.OnPieceCompleted -= OnDataChange;
+        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged -= StopScroll;
     }
 
-    //Initialising _contactList with dummy data 
+    private void OnDataChange(int id)
+    {
+        InitData();
+        _recyclableScrollRect.ReloadData();
+    }
+
+    private void StopScroll()
+    {
+
+        _recyclableScrollRect.StopMovement();              // stop inertia
+        _recyclableScrollRect.velocity = Vector2.zero;     // clear velocity
+
+        EventSystem.current.SetSelectedGameObject(null);
+
+        // Force reset drag state (hack nhưng hiệu quả)
+        ExecuteEvents.Execute<IEndDragHandler>(
+            _recyclableScrollRect.gameObject,
+            new PointerEventData(EventSystem.current),
+            ExecuteEvents.endDragHandler
+        );
+    }
     private void InitData()
     {
         if (_contactList != null) _contactList.Clear();
@@ -47,6 +73,7 @@ public class PieceRecyclableScroller : MonoBehaviour, IRecyclableScrollRectDataS
         {
             _contactList.Add(new PieceInfo() { id = CurrentGamePlayManager.Instance.PiecesRemain[i] });
         }
+
     }
 
     #region DATA-SOURCE

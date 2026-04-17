@@ -126,10 +126,15 @@ namespace PolyAndCode.UI
                 StopMovement();
                 onValueChanged.RemoveListener(OnValueChangedListener);
                 _recyclingSystem.DataSource = dataSource;
-                StartCoroutine(_recyclingSystem.InitCoroutine(() =>
-                                                               onValueChanged.AddListener(OnValueChangedListener)
-                                                              ));
                 _prevAnchoredPos = content.anchoredPosition;
+
+                StartCoroutine(_recyclingSystem.InitCoroutine(() =>
+                {
+                    onValueChanged.AddListener(OnValueChangedListener);
+                    content.anchoredPosition = _prevAnchoredPos;
+                }
+                                                              ));
+                //_prevAnchoredPos = content.anchoredPosition;
             }
         }
 

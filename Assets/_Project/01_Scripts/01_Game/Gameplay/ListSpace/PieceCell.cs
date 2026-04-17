@@ -28,7 +28,7 @@ public class PieceCell : MonoBehaviour, ICell, IPointerDownHandler
         _cellIndex = cellIndex;
         _contactInfo = contactInfo;
 
-        rawImage.texture = renderTectures[(_contactInfo.id - 1) % renderTectures.Count];
+        rawImage.texture = renderTectures[CurrentGamePlayManager.Instance.GetOrderInList(_contactInfo.id) % renderTectures.Count];
         CurrentGamePlayManager.Instance.OnGenPieceInList?.Invoke(_contactInfo.id);
     }
 

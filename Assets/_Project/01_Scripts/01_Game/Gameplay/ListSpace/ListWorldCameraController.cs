@@ -18,6 +18,7 @@ public class ListWorldCameraController : MonoBehaviour
 
         CurrentGamePlayManager.Instance.OnGenPieceInList += GenPiece;
         CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged += OnPieceChange;
+        CurrentGamePlayManager.Instance.OnPieceCompleted += OnOnPieceCompleted;
     }
 
     private void OnDestroy()
@@ -25,21 +26,21 @@ public class ListWorldCameraController : MonoBehaviour
         GameManager.Instance.SendMessage -= ReceiveMessage;
         CurrentGamePlayManager.Instance.OnGenPieceInList -= GenPiece;
         CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged -= OnPieceChange;
+        CurrentGamePlayManager.Instance.OnPieceCompleted -= OnOnPieceCompleted;
 
     }
     private void GenPiece(int pieceID)
     {
         if (order >= CurrentGamePlayManager.Instance.PiecesRemain.Count)
         {
-            if (currentPiece != null) LeanPool.Despawn(currentPiece);
+            if (currentPiece != null) Destroy(currentPiece);
             return;
         }
 
-
         if (CurrentGamePlayManager.Instance.GetOrderInList(pieceID) % GameConfig.MAX_CAMERA_COUNT != order) return;
-        if (currentPiece != null) LeanPool.Despawn(currentPiece);
+        if (currentPiece != null) Destroy(currentPiece.gameObject);
         BasePiece piece = Resources.Load<BasePiece>(GameConfig.GetLevelModelPiece(GameManager.Instance.CurrentLevel, pieceID));
-        currentPiece = LeanPool.Spawn(piece, pieceParent);
+        currentPiece = Instantiate(piece, pieceParent);
         currentPiece.transform.localPosition = Vector3.zero;
         currentPiece.DisplayInList();
     }
@@ -60,13 +61,19 @@ public class ListWorldCameraController : MonoBehaviour
             pieceParent.DOScale(1, 0.3f);
         }
     }
-
     private void ReceiveMessage(int ID, Vector3 Campos)
     {
         if (currentPiece != null && ID == currentPiece.GetID())
         {
             cameraTf.localPosition = Campos.normalized;
             cameraTf.LookAt(transform.position);
+        }
+    }
+    private void OnOnPieceCompleted(int pieceID)
+    {
+        if (currentPiece != null && pieceID == currentPiece.GetID())
+        {
+            Destroy(currentPiece.gameObject);
         }
     }
 }

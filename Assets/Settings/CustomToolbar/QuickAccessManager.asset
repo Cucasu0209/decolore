@@ -13,43 +13,41 @@ MonoBehaviour:
   m_Name: QuickAccessManager
   m_EditorClassIdentifier: 
   items:
-  - displayName: Image
+  - displayName: Background
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: Complete
+  - displayName: MainCamera
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: Count
+  - displayName: Directional Light
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: Top
+  - displayName: GameplayUI
+    scenePath: 
+  - displayName: UI
+    scenePath: 
+  - displayName: BottomZone
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: Panel
-    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: BG
-    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: ItemLists
-    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: Booster1
+  - displayName: ZoomZone
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
   - displayName: BoosterZone
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: Slider
+  - displayName: ItemLists
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: ListPieceCount
-    scenePath: 
-  - displayName: ListSpace
-    scenePath: 
-  - displayName: Cam0
+  - displayName: 1.6(Clone)
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: PieceParent
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Obj_InList
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Obj_NotYet
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
   - displayName: Obj_Demo
-    scenePath: 
-  - displayName: Obj_NotYet
-    scenePath: 
-  - displayName: 1.6
-    scenePath: 
-  - displayName: 1.6
-    scenePath: 
-  - displayName: WorldSpace
-    scenePath: 
-  - displayName: Cam4
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
-  - displayName: Cam3
+  - displayName: Obj_Done
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: 1.4(Clone)
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: PieceParent
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Obj_InList
+    scenePath: Assets/_Project/00_Scenes/Gameplay.unity
+  - displayName: Obj_NotYet
     scenePath: Assets/_Project/00_Scenes/Gameplay.unity
