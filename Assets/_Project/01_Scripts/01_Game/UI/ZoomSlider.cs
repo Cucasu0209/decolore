@@ -19,9 +19,9 @@ public class ZoomSlider : MonoBehaviour
         UserInputManager.Instance.SetZoomRatio(value);
     }
 
-    private void DisplayRatio(float value)
+    private void DisplayRatio()
     {
-        zoomSlider.SetValueWithoutNotify(value);
+        zoomSlider.SetValueWithoutNotify(UserInputManager.Instance.ZoomRatio);
     }
 
 }

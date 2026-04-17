@@ -10,6 +10,7 @@ public class GameConfig
     public const float DEFAULT_ALPHA = 100;
     public const int CURRENT_MAX_LEVEL = 8;
     public const int MAX_CAMERA_COUNT = 5;
+    public const int HEART_INIT = 5;
 
     public const string GAMEPLAY_SCENE_NAME = "Gameplay";
     public const string HOME_SCENE_NAME = "Home";

@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
 
 public class UserInputManager : MonoBehaviour
 {
@@ -11,14 +12,22 @@ public class UserInputManager : MonoBehaviour
     [SerializeField] private float zoomSpeed = 0.1f;
     [SerializeField] private float minY = -20f;
     [SerializeField] private float maxY = 80f;
-    private float targetRotX;
-    private float targetRotY;
-    private float zoomRatio;
+
+    [Header("UI Components")]
+    [SerializeField] private RectTransform itemListRect;
 
 
-    public Action<float, float> OnRotateCam;
-    public Action<float> OnZoomCam;
+    [HideInInspector] public float TargetRotX;
+    [HideInInspector] public float TargetRotY;
+    [HideInInspector] public float ZoomRatio;
 
+
+    public Action OnRotateCam;
+    public Action OnZoomCam;
+
+    private float mouseX;
+    private float mouseY;
+    private float scroll;
     private void Awake()
     {
         Instance = this;
@@ -42,10 +51,18 @@ public class UserInputManager : MonoBehaviour
     {
 
 #if UNITY_EDITOR || UNITY_STANDALONE
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
 
+        mouseX = mouseY = 0;
+        scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        if (Input.GetMouseButton(0))
+        {
+            mouseX = Input.GetAxis("Mouse X");
+            mouseY = Input.GetAxis("Mouse Y");
+
+            if (Mathf.Abs(mouseX) > 5) mouseX = 0;
+            if (Mathf.Abs(mouseY) > 5) mouseY = 0;
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -61,18 +78,18 @@ public class UserInputManager : MonoBehaviour
 
         if (isMouseDown)
         {
-            targetRotX += mouseX * 6000f * rotationSpeed * Time.deltaTime;
-            targetRotY -= mouseY * 6000f * rotationSpeed * Time.deltaTime;
-            targetRotY = Mathf.Clamp(targetRotY, minY, maxY);
+            TargetRotX += mouseX * 6000f * rotationSpeed * Time.deltaTime;
+            TargetRotY -= mouseY * 6000f * rotationSpeed * Time.deltaTime;
+            TargetRotY = Mathf.Clamp(TargetRotY, minY, maxY);
 
-            OnRotateCam?.Invoke(targetRotX, targetRotY);
+            OnRotateCam?.Invoke();
         }
 
         if (scroll != 0f)
         {
-            zoomRatio -= scroll * zoomSpeed * 5f;
-            zoomRatio = Mathf.Clamp(zoomRatio, 0, 1);
-            OnZoomCam?.Invoke(zoomRatio);
+            ZoomRatio -= scroll * zoomSpeed * 5f;
+            ZoomRatio = Mathf.Clamp(ZoomRatio, 0, 1);
+            OnZoomCam?.Invoke();
         }
 #endif
 
@@ -81,15 +98,15 @@ public class UserInputManager : MonoBehaviour
             Touch t = Input.GetTouch(0);
             if (EventSystem.current.IsPointerOverGameObject(t.fingerId))
             {
-                Debug.Log("Touch v�o UI");
+                Debug.Log("Touch vào UI");
             }
             if (t.phase == TouchPhase.Moved)
             {
-                targetRotX += t.deltaPosition.x * rotationSpeed;
-                targetRotY -= t.deltaPosition.y * rotationSpeed;
-                targetRotY = Mathf.Clamp(targetRotY, minY, maxY);
+                TargetRotX += t.deltaPosition.x * rotationSpeed;
+                TargetRotY -= t.deltaPosition.y * rotationSpeed;
+                TargetRotY = Mathf.Clamp(TargetRotY, minY, maxY);
 
-                OnRotateCam?.Invoke(targetRotX, targetRotY);
+                OnRotateCam?.Invoke();
 
             }
         }
@@ -104,17 +121,30 @@ public class UserInputManager : MonoBehaviour
 
             float delta = curr - prev;
 
-            zoomRatio -= delta * zoomSpeed * 0.01f;
-            zoomRatio = Mathf.Clamp(zoomRatio, 0, 1);
-            OnZoomCam?.Invoke(zoomRatio);
+            ZoomRatio -= delta * zoomSpeed * 0.01f;
+            ZoomRatio = Mathf.Clamp(ZoomRatio, 0, 1);
+            OnZoomCam?.Invoke();
 
         }
     }
 
     public void SetZoomRatio(float target)
     {
-        zoomRatio = Mathf.Clamp(target, 0, 1);
-        OnZoomCam?.Invoke(zoomRatio);
+        ZoomRatio = Mathf.Clamp(target, 0, 1);
+        OnZoomCam?.Invoke();
     }
+
+    public bool IsPointerOverPieceList()
+    {
+        if (RectTransformUtility.RectangleContainsScreenPoint(
+            itemListRect,
+            Input.mousePosition,
+            null))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
 

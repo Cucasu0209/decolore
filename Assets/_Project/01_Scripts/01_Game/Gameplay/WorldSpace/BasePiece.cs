@@ -61,13 +61,11 @@ public class BasePiece : MonoBehaviour
                     if (Vector3.Distance(objectDemo.position, demoModel.position) < minDistance)
                     {
                         CurrentGamePlayManager.Instance.CompletePiece(pieceID);
-                        Debug.LogError("Complete Piece " + pieceID);
                     }
                     else
                     {
-                        Debug.LogError("Fail Piece " + pieceID);
-
-
+                        if (UserInputManager.Instance.IsPointerOverPieceList() == false)
+                            CurrentGamePlayManager.Instance.InCorrectPiece(pieceID);
                     }
                 }
             }

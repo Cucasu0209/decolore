@@ -16,6 +16,8 @@ public class CurrentGamePlayManager : MonoBehaviour
     public Action<int> OnPieceComplete;
     public Action OnStartGame;
     public Action<int> OnPieceInListAppear;
+    public Action OnHeartChange;
+    public Action<bool> OnEndGame;
     #endregion
 
     #region Unity Methods
@@ -29,7 +31,6 @@ public class CurrentGamePlayManager : MonoBehaviour
         SpawnModel();
     }
     #endregion
-
 
     #region Setup Start game
     private void SpawnModel()
@@ -46,11 +47,12 @@ public class CurrentGamePlayManager : MonoBehaviour
     }
     private void StartGame()
     {
+        InitHeart();
         OnStartGame?.Invoke();
     }
     #endregion
 
-
+    #region In Game Methods
     public int GetOrderInList(int pID)
     {
         if (PiecesRemain.Contains(pID))
@@ -65,9 +67,6 @@ public class CurrentGamePlayManager : MonoBehaviour
         CurrentPieaceID = pID;
         OnPieceChange?.Invoke();
     }
-
-
-    #region In Game Methods
     public bool CanMoveCam() => CurrentPieaceID == -1;
     public bool IsPieceCompleted(int pID) => PiecesRemain.Contains(pID) == false;
     public void CompletePiece(int pID)
@@ -78,6 +77,52 @@ public class CurrentGamePlayManager : MonoBehaviour
             OnPieceComplete?.Invoke(pID);
         }
         ChoosePieceID(-1);
+        CheckWinGame();
+    }
+    public void InCorrectPiece(int pID)
+    {
+        DecreaseHeart();
+        CheckLoseGame();
+    }
+    #endregion
+
+    #region Hearts
+    public int Hearts { get; private set; } = GameConfig.HEART_INIT;
+    private void InitHeart()
+    {
+        Hearts = GameConfig.HEART_INIT;
+        OnHeartChange?.Invoke();
+    }
+    private void DecreaseHeart()
+    {
+        Hearts--;
+        OnHeartChange?.Invoke();
+    }
+    #endregion
+
+    #region End Game
+    private void CheckLoseGame()
+    {
+        if (Hearts <= 0)
+        {
+            LoseGame();
+        }
+    }
+    private void CheckWinGame()
+    {
+        if (PiecesRemain.Count == 0)
+        {
+            WinGame();
+        }
+    }
+    private void WinGame()
+    {
+        OnEndGame?.Invoke(true);
+    }
+    private void LoseGame()
+    {
+        OnEndGame?.Invoke(false);
+
     }
     #endregion
 }
