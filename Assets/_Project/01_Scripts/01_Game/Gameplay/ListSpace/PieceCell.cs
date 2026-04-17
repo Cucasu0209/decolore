@@ -29,7 +29,7 @@ public class PieceCell : MonoBehaviour, ICell, IPointerDownHandler
         _contactInfo = contactInfo;
 
         rawImage.texture = renderTectures[CurrentGamePlayManager.Instance.GetOrderInList(_contactInfo.id) % renderTectures.Count];
-        CurrentGamePlayManager.Instance.OnGenPieceInList?.Invoke(_contactInfo.id);
+        CurrentGamePlayManager.Instance.OnPieceInListAppear?.Invoke(_contactInfo.id);
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -6,12 +6,12 @@ public class Receiver : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameManager.Instance.SendMessage += ReceiveMessage;
+        GameManager.Instance.OnObjectChangeAngle += ReceiveMessage;
     }
 
     private void OnDestroy()
     {
-        GameManager.Instance.SendMessage -= ReceiveMessage;
+        GameManager.Instance.OnObjectChangeAngle -= ReceiveMessage;
 
     }
 

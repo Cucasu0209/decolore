@@ -28,26 +28,26 @@ public class BasePiece : MonoBehaviour
         currenCamera = Camera.main;
         camTf = Camera.main.transform;
         currentPos = demoModel.position;
-        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged += CheckEnable;
+        CurrentGamePlayManager.Instance.OnPieceChange += CheckEnable;
         minDistance = Mathf.Min(CaculateMinDistance() / 2, 0.3f);
         CheckEnable();
-        CurrentGamePlayManager.Instance.OnPieceCompleted += OnPieceComplete;
+        CurrentGamePlayManager.Instance.OnPieceComplete += OnPieceComplete;
 
     }
     private void OnDestroy()
     {
-        CurrentGamePlayManager.Instance.OnPieceCompleted -= OnPieceComplete;
-        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged -= CheckEnable;
+        CurrentGamePlayManager.Instance.OnPieceComplete -= OnPieceComplete;
+        CurrentGamePlayManager.Instance.OnPieceChange -= CheckEnable;
 
     }
     private void Update()
     {
         if (isInList == false)
         {
-            GameManager.Instance.SendMessage?.Invoke(pieceID, Camera.main.transform.position - transform.position);
+            GameManager.Instance.OnObjectChangeAngle?.Invoke(pieceID, Camera.main.transform.position - transform.position);
 
 
-            if (CurrentGamePlayManager.Instance.PieaceIDChoosing == pieceID)
+            if (CurrentGamePlayManager.Instance.CurrentPieaceID == pieceID)
             {
 
                 currentPos = GetMousePointOnPlanePlusUp();
@@ -58,7 +58,6 @@ public class BasePiece : MonoBehaviour
                 }
                 if (Input.GetMouseButtonUp(0))
                 {
-                    Debug.LogError("Distance " + Vector3.Distance(objectDemo.position, demoModel.position) + " MinDistance " + minDistance);
                     if (Vector3.Distance(objectDemo.position, demoModel.position) < minDistance)
                     {
                         CurrentGamePlayManager.Instance.CompletePiece(pieceID);
@@ -127,7 +126,7 @@ public class BasePiece : MonoBehaviour
 
     private void CheckEnable()
     {
-        demoModel.gameObject.SetActive(CurrentGamePlayManager.Instance.PieaceIDChoosing == pieceID);
+        demoModel.gameObject.SetActive(CurrentGamePlayManager.Instance.CurrentPieaceID == pieceID);
     }
     private float CaculateMinDistance()
     {

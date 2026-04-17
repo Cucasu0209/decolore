@@ -29,18 +29,18 @@ public class PieceRecyclableScroller : MonoBehaviour, IRecyclableScrollRectDataS
     //Recyclable scroll rect's data source must be assigned in Awake.
     private void Start()
     {
-        CurrentGamePlayManager.Instance.OnSetupModelComplete += InitData;
-        CurrentGamePlayManager.Instance.OnPieceCompleted += OnDataChange;
-        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged += StopScroll;
+        CurrentGamePlayManager.Instance.OnStartGame += InitData;
+        CurrentGamePlayManager.Instance.OnPieceComplete += OnDataChange;
+        CurrentGamePlayManager.Instance.OnPieceChange += StopScroll;
 
         _recyclableScrollRect.DataSource = this;
     }
 
     private void OnDestroy()
     {
-        CurrentGamePlayManager.Instance.OnSetupModelComplete -= InitData;
-        CurrentGamePlayManager.Instance.OnPieceCompleted -= OnDataChange;
-        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged -= StopScroll;
+        CurrentGamePlayManager.Instance.OnStartGame -= InitData;
+        CurrentGamePlayManager.Instance.OnPieceComplete -= OnDataChange;
+        CurrentGamePlayManager.Instance.OnPieceChange -= StopScroll;
     }
 
     private void OnDataChange(int id)

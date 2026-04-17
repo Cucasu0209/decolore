@@ -14,19 +14,19 @@ public class ListWorldCameraController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameManager.Instance.SendMessage += ReceiveMessage;
+        GameManager.Instance.OnObjectChangeAngle += ReceiveMessage;
 
-        CurrentGamePlayManager.Instance.OnGenPieceInList += GenPiece;
-        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged += OnPieceChange;
-        CurrentGamePlayManager.Instance.OnPieceCompleted += OnOnPieceCompleted;
+        CurrentGamePlayManager.Instance.OnPieceInListAppear += GenPiece;
+        CurrentGamePlayManager.Instance.OnPieceChange += OnPieceChange;
+        CurrentGamePlayManager.Instance.OnPieceComplete += OnOnPieceCompleted;
     }
 
     private void OnDestroy()
     {
-        GameManager.Instance.SendMessage -= ReceiveMessage;
-        CurrentGamePlayManager.Instance.OnGenPieceInList -= GenPiece;
-        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged -= OnPieceChange;
-        CurrentGamePlayManager.Instance.OnPieceCompleted -= OnOnPieceCompleted;
+        GameManager.Instance.OnObjectChangeAngle -= ReceiveMessage;
+        CurrentGamePlayManager.Instance.OnPieceInListAppear -= GenPiece;
+        CurrentGamePlayManager.Instance.OnPieceChange -= OnPieceChange;
+        CurrentGamePlayManager.Instance.OnPieceComplete -= OnOnPieceCompleted;
 
     }
     private void GenPiece(int pieceID)
@@ -49,13 +49,13 @@ public class ListWorldCameraController : MonoBehaviour
     {
         if (currentPiece != null)
         {
-            if (CurrentGamePlayManager.Instance.PieaceIDChoosing == currentPiece.GetID())
+            if (CurrentGamePlayManager.Instance.CurrentPieaceID == currentPiece.GetID())
             {
                 pieceParent.DOKill();
                 pieceParent.DOScale(0, 0.3f);
             }
         }
-        if (CurrentGamePlayManager.Instance.PieaceIDChoosing < 0)
+        if (CurrentGamePlayManager.Instance.CurrentPieaceID < 0)
         {
             pieceParent.DOKill();
             pieceParent.DOScale(1, 0.3f);

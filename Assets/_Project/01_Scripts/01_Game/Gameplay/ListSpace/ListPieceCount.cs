@@ -7,13 +7,13 @@ public class ListPieceCount : MonoBehaviour
     [SerializeField] private TextMeshProUGUI totalCount;
     private void Start()
     {
-        CurrentGamePlayManager.Instance.OnPieceCompleted += UpdateText;
-        CurrentGamePlayManager.Instance.OnSetupModelComplete += UpdateText;
+        CurrentGamePlayManager.Instance.OnPieceComplete += UpdateText;
+        CurrentGamePlayManager.Instance.OnStartGame += UpdateText;
     }
     private void OnDestroy()
     {
-        CurrentGamePlayManager.Instance.OnPieceCompleted -= UpdateText;
-        CurrentGamePlayManager.Instance.OnSetupModelComplete -= UpdateText;
+        CurrentGamePlayManager.Instance.OnPieceComplete -= UpdateText;
+        CurrentGamePlayManager.Instance.OnStartGame -= UpdateText;
     }
     private void UpdateText()
     {

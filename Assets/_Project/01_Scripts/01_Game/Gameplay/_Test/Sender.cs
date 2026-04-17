@@ -6,7 +6,7 @@ public class Sender : MonoBehaviour
 
     private void Update()
     {
-        GameManager.Instance.SendMessage?.Invoke(ID, Camera.main.transform.position - transform.position);
+        GameManager.Instance.OnObjectChangeAngle?.Invoke(ID, Camera.main.transform.position - transform.position);
     }
 
 }

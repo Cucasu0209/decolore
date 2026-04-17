@@ -14,11 +14,11 @@ public class DragDemoController : MonoBehaviour
     }
     private void Start()
     {
-        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged += OnIdChoosingChange;
+        CurrentGamePlayManager.Instance.OnPieceChange += OnIdChoosingChange;
     }
     private void OnDestroy()
     {
-        CurrentGamePlayManager.Instance.OnPieaceIDChoosingChanged -= OnIdChoosingChange;
+        CurrentGamePlayManager.Instance.OnPieceChange -= OnIdChoosingChange;
 
     }
 
@@ -30,7 +30,7 @@ public class DragDemoController : MonoBehaviour
 
     public void SetCacheDrag(int pieceID)
     {
-        if (CurrentGamePlayManager.Instance.PieaceIDChoosing == -1)
+        if (CurrentGamePlayManager.Instance.CurrentPieaceID == -1)
         {
             cachePieceID = pieceID;
             lastTimeCache = Time.time;
@@ -41,7 +41,7 @@ public class DragDemoController : MonoBehaviour
     {
 #if UNITY_EDITOR || UNITY_STANDALONE
 
-        if (cachePieceID != -1 && CurrentGamePlayManager.Instance.PieaceIDChoosing == -1 && Time.time - lastTimeCache > 0.2f)
+        if (cachePieceID != -1 && CurrentGamePlayManager.Instance.CurrentPieaceID == -1 && Time.time - lastTimeCache > 0.2f)
         {
             if (Input.GetMouseButton(0))
             {

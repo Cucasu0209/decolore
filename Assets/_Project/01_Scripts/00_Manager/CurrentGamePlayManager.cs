@@ -6,18 +6,19 @@ using UnityEngine;
 
 public class CurrentGamePlayManager : MonoBehaviour
 {
-    public int PieaceIDChoosing = -1;
+    public static CurrentGamePlayManager Instance { get; private set; }
+    public int CurrentPieaceID { get; private set; } = -1;
     public List<int> PiecesRemain { get; private set; } = new List<int>();
     public int TotalPiece { get; private set; }
 
-    public Action OnPieaceIDChoosingChanged;
-    public Action<int> OnPieceCompleted;
-    public Action OnSetupModelComplete;
-    public Action<int> OnGenPieceInList;
+    #region Actions
+    public Action OnPieceChange;
+    public Action<int> OnPieceComplete;
+    public Action OnStartGame;
+    public Action<int> OnPieceInListAppear;
+    #endregion
 
-    public static CurrentGamePlayManager Instance { get; private set; }
-
-
+    #region Unity Methods
     private void Awake()
     {
         Instance = this;
@@ -27,6 +28,10 @@ public class CurrentGamePlayManager : MonoBehaviour
         yield return null;
         SpawnModel();
     }
+    #endregion
+
+
+    #region Setup Start game
     private void SpawnModel()
     {
         BaseItem obj = Resources.Load<BaseItem>(GameConfig.GetLevelModelTotal(GameManager.Instance.CurrentLevel));
@@ -37,8 +42,15 @@ public class CurrentGamePlayManager : MonoBehaviour
         {
             PiecesRemain.Add(i);
         }
-        OnSetupModelComplete?.Invoke();
+        StartGame();
     }
+    private void StartGame()
+    {
+        OnStartGame?.Invoke();
+    }
+    #endregion
+
+
     public int GetOrderInList(int pID)
     {
         if (PiecesRemain.Contains(pID))
@@ -47,22 +59,25 @@ public class CurrentGamePlayManager : MonoBehaviour
         }
         return -1;
     }
-
     public void ChoosePieceID(int pID)
     {
         if (IsPieceCompleted(pID) && pID > 0) return;
-        PieaceIDChoosing = pID;
-        OnPieaceIDChoosingChanged?.Invoke();
+        CurrentPieaceID = pID;
+        OnPieceChange?.Invoke();
     }
-    public bool CanMoveCam() => PieaceIDChoosing == -1;
+
+
+    #region In Game Methods
+    public bool CanMoveCam() => CurrentPieaceID == -1;
     public bool IsPieceCompleted(int pID) => PiecesRemain.Contains(pID) == false;
     public void CompletePiece(int pID)
     {
         if (!IsPieceCompleted(pID))
         {
             PiecesRemain.Remove(pID);
-            OnPieceCompleted?.Invoke(pID);
+            OnPieceComplete?.Invoke(pID);
         }
         ChoosePieceID(-1);
     }
+    #endregion
 }
